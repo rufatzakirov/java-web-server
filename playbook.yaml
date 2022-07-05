@@ -1,0 +1,18 @@
+- name: install and run containers
+  hosts: server1
+  tasks:
+  - name: install packages
+    yum:
+      name: yum-utils
+      state: present
+  - name: add repo
+    yum_repository:
+      name: docker.repo
+      description: docker repo
+      baseurl: https://download.docker.com/linux/centos/docker-ce.repo
+  - name: install docker
+    yum:
+      name: docker-ce
+      state: present
+
+  
