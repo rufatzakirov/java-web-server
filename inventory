@@ -1,5 +1,3 @@
-[lbservers]
-control ansible_connection=local 
 [webservers]
 server1
 server2
