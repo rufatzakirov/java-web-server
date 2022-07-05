@@ -5,11 +5,11 @@
     yum:
       name: yum-utils
       state: present
-  - name: add repo
-    yum_repository:
-      name: docker.repo
-      description: docker repo
-      baseurl: https://download.docker.com/linux/centos/docker-ce.repo
+  - name: "Configuring docker-ce repo"
+    get_url:
+      url: https://download.docker.com/linux/centos/docker-ce.repo
+      dest: /etc/yum.repos.d/docker-ce.repo
+      mode: 0644
   - name: install docker
     yum:
       name: docker-ce
