@@ -3,7 +3,9 @@
   tasks:
   - name: install packages
     yum:
-      name: yum-utils
+      name: 
+        - yum-utils
+        - python3-pip
       state: present
   - name: "Configuring docker-ce repo"
     get_url:
@@ -19,6 +21,9 @@
       name: docker
       state: started
       enabled: true
+  - name: install docker module
+    pip:
+      name: docker
   - name: Docker login
     docker_login:
       username: "{{username}}" 
