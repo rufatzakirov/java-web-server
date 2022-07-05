@@ -20,7 +20,7 @@ pipeline{
         }
         stage("deploy container"){
             steps{
-                sh "docker run -d --name web$BUILD_NUMBER -p 80$BUILD_NUMBER:8080 zakirovrufat/$JOB_NAME:$BUILD_NUMBER"
+                sh "ansible all -i inventory -u ansible  -m ping"
             }
         }
     }
