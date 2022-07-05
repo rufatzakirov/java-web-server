@@ -31,6 +31,6 @@
   - name: start container
     community.docker.docker_container:
       name: java-web
-      image: zakirovrufat/"{{JOB_NAME}}":"{{BUILD_NUMBER}}"
+      image: zakirovrufat/{{JOB_NAME}}:{{BUILD_NUMBER}}
       state: started
       ports: 8088:8080
