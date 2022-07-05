@@ -20,7 +20,7 @@ pipeline{
         }
         stage("deploy container"){
             steps{
-                sh "ansible all -i inventory -u ansible  -m ping"
+                sh "ansible-playbook -i inventory -u ansible playbook.yaml"
             }
         }
     }
